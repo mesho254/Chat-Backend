@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 
 }
-const leaveRoom = require('./util/leave-room.js');
+const leaveRooms = require('./util/leave-room.js');
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -80,7 +80,7 @@ io.on('connection', (socket) => {
         socket.leave(room);
         const __createdtime__ = Date.now();
         // Remove user from memory
-        allUsers = leaveRoom(socket.id, allUsers);
+        allUsers = leaveRooms(socket.id, allUsers);
         socket.to(room).emit('chatroom_users', allUsers);
         socket.to(room).emit('receive_message', {
           username: CHAT_BOT,
@@ -102,7 +102,7 @@ io.on('connection', (socket) => {
         console.log('User disconnected from the chat');
         const user = allUsers.find((user) => user.id == socket.id);
         if (user?.username) {
-          allUsers = leaveRoom(socket.id, allUsers);
+          allUsers = leaveRooms(socket.id, allUsers);
           socket.to(chatRoom).emit('chatroom_users', allUsers);
           socket.to(chatRoom).emit('receive_message', {
             message: `${user.username} has disconnected from the chat.`,
