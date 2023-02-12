@@ -6,13 +6,13 @@ if (process.env.NODE_ENV !== "production") {
   const harperSaveMessage = require("./services/harper-save-message");
   const harperGetMessages = require("./services/harper-get-messages");
 }
-  const cors = require('cors');
-  const express = require('express');
-  const http = require('http');
+  const cors = require("cors");
+  const express = require("express");
+  const http = require("http");
   
-  const { Server } = require('socket.io');
+  const { Server } = require("socket.io");
 const app = express();
-const CHAT_BOT = 'ChatBot';
+const CHAT_BOT = "ChatBot";
 
 let chatRoom = ''; // E.g. javascript, node,...
 let allUsers = []; // All users in current chat room
