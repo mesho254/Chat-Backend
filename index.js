@@ -1,4 +1,7 @@
-require('dotenv').config();
+// require('dotenv').config({path:'.env'});
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 const leaveRoom = require('./utils/leave-room.js');
 const express = require('express');
