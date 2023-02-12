@@ -2,7 +2,7 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 
-
+}
 const leaveRoom = require('./utils/leave-room');
 const express = require('express');
 const app = express();
@@ -12,6 +12,7 @@ const { Server } = require('socket.io');
 const CHAT_BOT = 'ChatBot';
 const harperSaveMessage = require('./services/harper-save-message');
 const harperGetMessages = require('./services/harper-get-messages');
+
 let chatRoom = ''; // E.g. javascript, node,...
 let allUsers = []; // All users in current chat room
 
@@ -30,6 +31,7 @@ const io = new Server(server, {
       methods: ['GET', 'POST'],
     },
   });
+
 
 
 // Listen for when the client connects via socket.io-client
@@ -119,4 +121,3 @@ app.get('/', (req, res) => {
 
 
 server.listen(PORT, () => 'Server is running on port 4000');
-}
