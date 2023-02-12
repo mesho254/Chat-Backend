@@ -2,16 +2,16 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
   const leaveRooms = require("./util/leave-room.js");
+  const harperSaveMessage = require("./services/harper-save-message");
+  const harperGetMessages = require("./services/harper-get-messages");
 }
-
-const express = require('express');
-const app = express();
-const http = require('http');
 const cors = require('cors');
-const { Server } = require('socket.io');
+  const express = require('express');
+  const http = require('http');
+  
+  const { Server } = require('socket.io');
+const app = express();
 const CHAT_BOT = 'ChatBot';
-const harperSaveMessage = require("./services/harper-save-message");
-const harperGetMessages = require("./services/harper-get-messages");
 
 let chatRoom = ''; // E.g. javascript, node,...
 let allUsers = []; // All users in current chat room

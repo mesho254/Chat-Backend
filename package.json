@@ -1,7 +1,6 @@
 {
   "name": "chat-backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,7 +18,16 @@
     "socket.io": "^4.5.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "dotenv": "^16.0.3"
-  }
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mesho254/Chat-Backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mesho254/Chat-Backend/issues"
+  },
+  "homepage": "https://github.com/mesho254/Chat-Backend#readme",
+  "description": ""
 }
