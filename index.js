@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 
 }
-const leaveRoom = require('./utils/leave-room.js');
+const leaveRoom = require('./util/leave-room.js');
 const express = require('express');
 const app = express();
 const http = require('http');
