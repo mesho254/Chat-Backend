@@ -1,7 +1,7 @@
 // require('dotenv').config({path:'.env'});
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
-}
+
 
 const leaveRoom = require('./utils/leave-room');
 const express = require('express');
@@ -119,3 +119,4 @@ app.get('/', (req, res) => {
 
 
 server.listen(PORT, () => 'Server is running on port 4000');
+}
