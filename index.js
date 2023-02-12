@@ -1,17 +1,17 @@
 // require('dotenv').config({path:'.env'});
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
-
+  const leaveRooms = require("./util/leave-room.js");
 }
-const leaveRooms = require('./util/leave-room.js');
+
 const express = require('express');
 const app = express();
 const http = require('http');
 const cors = require('cors');
 const { Server } = require('socket.io');
 const CHAT_BOT = 'ChatBot';
-const harperSaveMessage = require('./services/harper-save-message');
-const harperGetMessages = require('./services/harper-get-messages');
+const harperSaveMessage = require("./services/harper-save-message");
+const harperGetMessages = require("./services/harper-get-messages");
 
 let chatRoom = ''; // E.g. javascript, node,...
 let allUsers = []; // All users in current chat room
@@ -117,7 +117,5 @@ app.get('/', (req, res) => {
       results:'Hello fro the server side'
     })
   });
-
-
 
 server.listen(PORT, () => 'Server is running on port 4000');
